@@ -58,8 +58,8 @@ for i = 1:n
 
         % Convert to flux
         fl = 10 .^ (-0.4 * magerr);
-        fl_err = 10 .^ (-0.4 * err);
         fl_real = 10 .^ (-0.4 * mag);
+        fl_err = abs(fl - fl_real);
         
         % Copy into results
         res.L(i) = lm;

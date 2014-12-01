@@ -7,7 +7,7 @@ sz = size(galaxies.m);
 n = sz(1);
 
 ff = strcat('filtered_fluxes_', filename, '.dat');
-dlmwrite(ff, [galaxies.F zeros([n 1])], ' ');
+dlmwrite(ff, [galaxies.F galaxies.F_err], ' ');
 
 ff = strcat('fluxes_', filename, '.dat');
 dlmwrite(ff, galaxies.F_real, ' ');
