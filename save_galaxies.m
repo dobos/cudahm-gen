@@ -1,4 +1,4 @@
-function save_galaxies(galaxies, filename)
+function save_galaxies(galaxies, path)
 %--------------------------------------------------------------
 % Writes a sample of galaxies into files
 %--------------------------------------------------------------
@@ -6,11 +6,11 @@ function save_galaxies(galaxies, filename)
 sz = size(galaxies.m);
 n = sz(1);
 
-ff = strcat('filtered_fluxes_', filename, '.dat');
+ff = strcat(path, '/filtered_fluxes.dat');
 dlmwrite(ff, [galaxies.F galaxies.F_err], ' ');
 
-ff = strcat('fluxes_', filename, '.dat');
+ff = strcat(path, '/fluxes.dat');
 dlmwrite(ff, galaxies.F_real, ' ');
 
-ff = strcat('dist_', filename, '.dat');
+ff = strcat(path, '/dist.dat');
 dlmwrite(ff, galaxies.D_L, ' ');
